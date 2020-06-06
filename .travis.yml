@@ -28,6 +28,19 @@ jobs:
   - name: "EigenMath - clang"
     env: CMAKE_DEFINES="-DRBDL_USE_SIMPLE_MATH=OFF -DRBDL_BUILD_TESTS=ON -DRBDL_BUILD_ADDON_BENCHMARK=ON"
     compiler: clang
+  - name: "SimpleMath - gcc - static"
+    env: CMAKE_DEFINES="-DRBDL_USE_SIMPLE_MATH=ON -DRBDL_BUILD_TESTS=ON -DRBDL_BUILD_ADDON_BENCHMARK=ON -DRBDL_BUILD_STATIC=ON"
+    compiler: gcc
+  - name: "SimpleMath - clang - static"
+    env: CMAKE_DEFINES="-DRBDL_USE_SIMPLE_MATH=ON -DRBDL_BUILD_TESTS=ON -DRBDL_BUILD_ADDON_BENCHMARK=ON -DRBDL_BUILD_STATIC=ON"
+    compiler: clang
+  - name: "EigenMath - gcc - static"
+    env: CMAKE_DEFINES="-DRBDL_USE_SIMPLE_MATH=OFF -DRBDL_BUILD_TESTS=ON -DRBDL_BUILD_ADDON_BENCHMARK=ON -DRBDL_BUILD_STATIC=ON"
+    compiler: gcc
+  - name: "EigenMath - clang - static"
+    env: CMAKE_DEFINES="-DRBDL_USE_SIMPLE_MATH=OFF -DRBDL_BUILD_TESTS=ON -DRBDL_BUILD_ADDON_BENCHMARK=ON -DRBDL_BUILD_STATIC=ON"
+    compiler: clang
+
 
 before_script:
   - mkdir build
